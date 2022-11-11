@@ -1,11 +1,11 @@
-###GENERATEUR DE MOT DE PASSE###
+###PASSWORD GENERATOR###
 from random import *
-###tableaux contenants des caracteres du clavier en code ASCII
+###LISTS CONTAINING EVERY ALLOWED SYMBOL IN A PASSWORD
 symboles = [33, 34, 35, 36, 37, 38, 38, 40, 41, 42, 43, 44, 45, 46, 47, 58, 59, 60, 61, 62, 63, 64, 91, 92, 93, 94, 95, 96, 123, 124, 125, 123]
 majuscules = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90]
 nombres = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
 minuscules = [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]
-
+###SHUFFLE FUNCTION
 def echange(tab):
     for i in range(len(tab)):
         rand = randint(0, i)
@@ -14,6 +14,7 @@ def echange(tab):
         tab[rand] = res
     return tab
 ###Declaration des fonctions pour determiner si la longueur du mot de passe entree par l'utilisateur est correcte###
+###FUNCTIONS TO DETERMINATE IF THE LENGTH INPUT BT USER IS BETWEEN 12 AND 24
 def longueur_choisie():
     longueur_mdp = int(input("Entrez le nombre de caractères voulus dans votre mot de passe entre 12 et 24:" + " "))
     return longueur(longueur_mdp)
@@ -24,12 +25,14 @@ def longueur(longueur):
         longueur_choisie()
     else:
         return tableau(longueur)
-###Modification de la taille du tableau par celle choisie par l'utilisateur###
+###Generation d'un tableau de la taille choisie par l'utilisateur###
+###CREATION OF A LIST OF THE LENGTH CHOSEN BY USER
 def tableau(longueur):
     tableau_mdp = [0 for i in range(longueur)]
     return tableau_mdp
 
 ###Fonction pour determiner le nombres de symboles, majuscules et chiffres dans le tableau###
+###FUNCTIONS TO DETERMINATE THE NUMBER OF SYMBOLS, MAJ, AND MIN IN THE LIST
 def nmbsymboles(tableau_mdp):
     return len(tableau_mdp) //7
 
@@ -41,8 +44,8 @@ def maj(tableau_mdp):
 def nmb(tableau_mdp):
     return len(tableau_mdp) // 5
     
-    
-
+###Fonction qui permet de generer le mot de passe a partir de toutes les donnees precedentes
+###FUNCTION TO CREATE PASSWORD USING ALL PREVIOUS DATA###
 def mdp_type(tableau_mdp, symboles, majuscules, nombres, minuscules):
     i = 0
     nmb_symbole = nmbsymboles(tableau_mdp)
@@ -67,6 +70,7 @@ def mdp_type(tableau_mdp, symboles, majuscules, nombres, minuscules):
     return tableau_mdp  
 
 #programme principal
+###MAIN PROGRAM
 tableau_avantfin = longueur_choisie()
 
 tableau_fini = mdp_type(tableau_avantfin, symboles, majuscules, nombres, minuscules)
