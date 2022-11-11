@@ -82,7 +82,7 @@ tableau_avantfin = longueur_choisie()
 tableau_fini = mdp_type(tableau_avantfin, symboles, majuscules, nombres, minuscules)
 for i in range(3):
     echange(tableau_fini)
-print(tableau_fini)
+
 
 res = tableau_fini[0]
 for i in range(1, len(tableau_fini) - 1):
