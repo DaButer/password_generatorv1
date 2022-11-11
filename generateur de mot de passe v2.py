@@ -88,4 +88,5 @@ res = tableau_fini[0]
 for i in range(1, len(tableau_fini) - 1):
     res = res + stringing(tableau_fini, i)
 
-print(res)
+print("Voici votre mot de passe:", res)
+#print("Here's your password:", res)
