@@ -27,7 +27,7 @@ def longueur_choisie():
 
 def longueur(longueur):
     if longueur < 12 or longueur > 24:
-        print("Cette longueur choisie est trop courte, veuillez entrez un nombre compris entre 12 et 24" )
+        print("Cette longueur choisie n'est pas dans les normes, veuillez entrez un nombre compris entre 12 et 24" )
         longueur_choisie()
     else:
         return tableau(longueur)
