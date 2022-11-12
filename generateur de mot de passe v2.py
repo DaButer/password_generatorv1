@@ -27,7 +27,7 @@ def longueur_choisie():
 
 def longueur(longueur):
     if longueur < 12 or longueur > 24:
-        print("Cette longueur choisie est trop courte, veuillez entrez un nombre compris entre 12 et 20" )
+        print("Cette longueur choisie est trop courte, veuillez entrez un nombre compris entre 12 et 24" )
         longueur_choisie()
     else:
         return tableau(longueur)
@@ -88,5 +88,5 @@ res = tableau_fini[0]
 for i in range(1, len(tableau_fini) - 1):
     res = res + stringing(tableau_fini, i)
 
-print("Voici votre mot de passe:", res)
-#print("Here's your password:", res)
+print("Voici votre mot de passe: ", res)
+#print("Here's your password: ", res)
